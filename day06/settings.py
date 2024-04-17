@@ -263,3 +263,9 @@ MESSAGE_DANDER_TAG = 50
 MESSAGE_TAGS = {
     MESSAGE_DANDER_TAG: "danger"
 }
+
+
+try:
+    from .local_settings import *
+except Exception:
+    pass
