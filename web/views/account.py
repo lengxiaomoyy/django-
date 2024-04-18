@@ -1,4 +1,5 @@
 import random
+import sys
 
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
@@ -100,3 +101,11 @@ def logout(request):
 
 def home(request):
     return render(request, 'home.html')
+
+
+def pageerr(request):
+    error=sys.exc_info()
+    context={
+        "error":error
+    }
+    return render(request, '500.html')
